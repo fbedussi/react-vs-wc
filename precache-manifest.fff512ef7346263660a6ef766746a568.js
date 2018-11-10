@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/react-vs-wc/static/js/runtime~main.4c55e940.js"
   },
   {
-    "revision": "2c167b80bd86503c93a3",
-    "url": "/react-vs-wc/static/js/main.2c167b80.chunk.js"
+    "revision": "1bd00b34e2ebc5cfd69d",
+    "url": "/react-vs-wc/static/js/main.1bd00b34.chunk.js"
   },
   {
     "revision": "3da870a3c1c4b41662f2",
     "url": "/react-vs-wc/static/js/1.3da870a3.chunk.js"
   },
   {
-    "revision": "2c167b80bd86503c93a3",
+    "revision": "1bd00b34e2ebc5cfd69d",
     "url": "/react-vs-wc/static/css/main.b40b8cfb.chunk.css"
   },
   {
-    "revision": "2621c32e5ca0b4f0d65abaf7cc07ef4a",
+    "revision": "2a1ea646f6ab0bbf1834d7e01c11d3c8",
     "url": "/react-vs-wc/index.html"
   }
 ];
