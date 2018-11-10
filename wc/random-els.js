@@ -1,5 +1,5 @@
 const randomRgbVal = () => Math.floor(Math.random() * 256);
-const stateLength = 5000;
+const stateLength = 500;
 
 class RandomEls extends HTMLElement {
     constructor() {

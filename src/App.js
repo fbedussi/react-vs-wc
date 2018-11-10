@@ -1,33 +1,28 @@
 import React, { Component } from 'react';
-
-const randomRgbVal = () => Math.floor(Math.random() * 256);
-const stateLength = 5000;
-
-function refreshState () {
-  const state = Array.from({length: stateLength}, () => ({
-    width: Math.floor(Math.random() * 80), 
-    color: `rgb(${randomRgbVal()}, ${randomRgbVal()}, ${randomRgbVal()})`
-  }));
-
-  return state;
-}
+import GridElement from './GridElement';
+import {refreshRandomElements, getGridElements, numberOfGridElements, numberOfRandomElements} from './utils';
 
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      elements: refreshState(),
+      randomElements: refreshRandomElements(),
+      gridElements: getGridElements(),
     }
 
     setInterval(() => {
-      this.setState({elements: refreshState()});
+      this.setState({elements: refreshRandomElements()});
     }, 500);
   }
+  
   render() {
     return (
       <div className="App">
-        {this.state.elements.map((el, i) => {
+        <h1>{`${numberOfGridElements} elements refreshing indipendently and randomly`}</h1>
+        {this.state.gridElements.map((dummy, i) => (<GridElement key={i}/>))}
+        <h1>{`${numberOfRandomElements} elements refreshing randomly but all toghether`}</h1>
+        {this.state.randomElements.map((el, i) => {
           const style = {
             display: 'inline-block', 
             height: '30px', 
