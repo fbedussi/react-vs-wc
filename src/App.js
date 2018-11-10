@@ -1,25 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+const randomRgbVal = () => Math.floor(Math.random() * 256);
+const stateLength = 5000;
+
+function refreshState () {
+  const state = Array.from({length: stateLength}, () => ({
+    width: Math.floor(Math.random() * 80), 
+    color: `rgb(${randomRgbVal()}, ${randomRgbVal()}, ${randomRgbVal()})`
+  }));
+
+  return state;
+}
 
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      elements: refreshState(),
+    }
+
+    setInterval(() => {
+      this.setState({elements: refreshState()});
+    }, 500);
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        {this.state.elements.map((el, i) => {
+          const style = {
+            display: 'inline-block', 
+            height: '30px', 
+            width: `${el.width}px`, 
+            backgroundColor: el.color
+          };
+          return <span key={i} style={style}></span>
+        })}
       </div>
     );
   }
