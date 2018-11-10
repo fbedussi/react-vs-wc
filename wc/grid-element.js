@@ -22,7 +22,7 @@ class GridElement extends HTMLElement {
     refreshState() {
         this.state = getNewState();
         this.render();
-        setTimeout(this.refreshState.bind(this), Math.floor(Math.random * 500));
+        setTimeout(this.refreshState.bind(this), Math.floor(Math.random * 2000));
     }
 
     render() {

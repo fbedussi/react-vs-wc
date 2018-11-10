@@ -1,6 +1,6 @@
 export const randomRgbVal = () => Math.floor(Math.random() * 256);
 export const numberOfRandomElements = 50;
-export const numberOfGridElements = 250;
+export const numberOfGridElements = 1000;
 
 export function refreshRandomElements () {
   return Array.from({length: numberOfRandomElements}, () => ({
